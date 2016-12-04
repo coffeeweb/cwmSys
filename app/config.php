@@ -1,5 +1,6 @@
 <?php
 	//Constantes
+	
 	$configs = new HXPHP\System\Configs\Config;
 
 	$configs->env->add('development');
@@ -10,6 +11,8 @@
 			'password' => '',
 			'dbname' => 'cwm2'
 		));
+
+	$configs->title = 'CwmSystem';
 
 	/*
 		//Globais
