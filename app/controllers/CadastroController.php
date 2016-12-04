@@ -6,9 +6,18 @@ class CadastroController extends \HXPHP\System\Controller
 	{
 		$this->view->setFile('index');
 
-		$this->request->post();
+		$post = $this->request->post();
 
-		$cadastrarUsuario = User::cadastrar($this->request->post());
+		if (!empty($post)) {
+		 $cadastrarUsuario = User::cadastrar($post);
 
+		 if ($cadastrarUsuario->status === false) {
+		 	$this->load('Helpers\Alert', array(
+		 			'danger',
+		 			'Ops! Não foi posivel efetuar o cadastro,Verifique os seguintes erros :',
+		 			$cadastrarUsuario->errors
+		 		));
+		 }
+		}		
 	}
 }

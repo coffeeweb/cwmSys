@@ -9,6 +9,7 @@
                     <?php echo (isset($this->menu) ? $this->menu : ''); ?>
                 </div>
                 <div class="panel-body">
+                <?php echo (isset($this->alert) ? $this->alert : ''); ?>
                     <form class="form-horizontal" action="/mvc/cadastro/cadastrar/" method="post">
                     <div class="form-group">
                       <label for="name" class="col-sm-2 control-label">Nome</label>
